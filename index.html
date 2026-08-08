@@ -4,69 +4,254 @@
   <meta charset="UTF-8">
   <title>Vulhub 通关笔记</title>
   <meta name="description" content="Vulhub 靶场通关笔记与漏洞知识库">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#42b983">
+  <meta name="referrer" content="no-referrer">
+
   <!-- 主题 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <!-- 暗色主题切换 -->
+  <!-- 暗色主题 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css">
+  <!-- Tabs 插件样式 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.css">
+
+  <style>
+    :root {
+      --theme-color: #42b983;
+      --sidebar-width: 320px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    /* 侧边栏滚动 */
+    .sidebar {
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      padding-bottom: 48px;
+    }
+    .sidebar::-webkit-scrollbar { width: 6px; }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 3px;
+    }
+    .sidebar::-webkit-scrollbar-thumb:hover { background: #999; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+
+    /* 侧边栏标题 */
+    .sidebar .app-name-link {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--theme-color) !important;
+    }
+
+    /* 正文 */
+    .content {
+      padding-top: 20px;
+    }
+    .markdown-section {
+      max-width: 920px;
+      padding: 30px 40px;
+      line-height: 1.75;
+    }
+    .markdown-section h1 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.4em;
+    }
+    .markdown-section h2 {
+      border-bottom: 1px solid #f0f0f0;
+      padding-bottom: 0.3em;
+      margin-top: 1.6em;
+    }
+
+    /* 代码块 */
+    .markdown-section pre {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .markdown-section code {
+      border-radius: 4px;
+    }
+
+    /* 表格 */
+    .markdown-section table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .markdown-section tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    /* 图片 */
+    .markdown-section img {
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      max-width: 100%;
+    }
+
+    /* 引用块 */
+    .markdown-section blockquote {
+      border-left: 4px solid var(--theme-color);
+      background: #f6ffed;
+      color: #555;
+      margin: 1em 0;
+      padding: 0.8em 1em;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* 返回顶部按钮位置微调 */
+    .back-to-top {
+      bottom: 30px;
+      right: 30px;
+    }
+
+    /* 分页按钮 */
+    .docsify-pagination-container {
+      margin-top: 2.5em;
+      padding-top: 1.5em;
+      border-top: 1px solid #eee;
+    }
+
+    /* 搜索框 */
+    .search input {
+      border-radius: 20px !important;
+      border: 1px solid #e0e0e0 !important;
+      padding-left: 16px !important;
+    }
+    .search input:focus {
+      border-color: var(--theme-color) !important;
+      box-shadow: 0 0 0 2px rgba(66,185,131,0.15);
+    }
+  </style>
 </head>
 <body>
   <div id="app">加载中...</div>
 
   <script>
     window.$docsify = {
+      // ========== 基础 ==========
       name: 'Vulhub 通关笔记',
+      nameLink: '/#/',
       repo: 'https://github.com/hacker369/VulhubTutorialNotes.github.io',
+      homepage: 'README.md',
       loadSidebar: true,
       loadNavbar: true,
       subMaxLevel: 3,
       auto2top: true,
-      homepage: 'README.md',
-      // 搜索
+      maxLevel: 4,
+      relativePath: false,
+      externalLinkTarget: '_blank',
+      externalLinkRel: 'noopener',
+      routerMode: 'hash',
+
+      // 别名
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md'
+      },
+
+      // ========== 搜索 ==========
       search: {
         paths: 'auto',
-        placeholder: '搜索笔记',
-        noData: '没有找到结果',
-        depth: 4
+        placeholder: '搜索漏洞笔记...',
+        noData: '没有找到相关内容',
+        depth: 4,
+        maxDepth: 6,
+        hideOtherSidebarContent: false
       },
-      // 分页
+
+      // ========== 分页 ==========
       pagination: {
         previousText: '上一篇',
         nextText: '下一篇',
         crossChapter: true,
         crossChapterText: true
       },
-      // 代码复制
+
+      // ========== 代码复制 ==========
       copyCode: {
         buttonText: '复制',
-        errorText: '失败',
+        errorText: '复制失败',
         successText: '已复制'
       },
-      // 别名
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md',
-        '/.*/_navbar.md': '/_navbar.md'
+
+      // ========== Tabs ==========
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComments: true,
+        tabHeadings: true
       },
-      // 外链新窗口打开
-      externalLinkTarget: '_blank',
-      // 插件
-      plugins: []
+
+      // ========== 进度条 ==========
+      // 官方内置，自动启用
+
+      // ========== 封面（可选，需要 coverpage.md）==========
+      coverpage: true,
+      onlyCover: false,
+
+      // ========== 字数统计 ==========
+      count: {
+        countable: true,
+        fontsize: '0.9em',
+        color: 'rgb(90,90,90)',
+        language: 'chinese'
+      },
+
+      // ========== 插件扩展位 ==========
+      plugins: [
+        // 在每页底部加最后更新提示（可选）
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            return html;
+          });
+          hook.afterEach(function (html, next) {
+            next(html);
+          });
+        }
+      ]
     }
   </script>
 
-  <!-- Docsify 核心 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- ===== Docsify 核心 ===== -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- ===== 官方 / 常用插件 ===== -->
   <!-- 全文搜索 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <!-- 图片点击放大 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <!-- 代码复制 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
-  <!-- 分页 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <!-- 外链脚本支持 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+  <!-- Emoji 增强 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/emoji.min.js"></script>
+  <!-- 代码高亮（Prism） -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-http.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-go.min.js"></script>
+
+  <!-- ===== 第三方常用插件 ===== -->
+  <!-- 代码一键复制 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+  <!-- 上一篇 / 下一篇 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- Tabs 选项卡 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
   <!-- 暗色 / 亮色切换 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
+  <!-- 中文字数统计 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
+  <!-- 回到顶部 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-back-to-top@latest/dist/docsify-back-to-top.min.js"></script>
 </body>
 </html>
