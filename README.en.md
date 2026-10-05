@@ -43,13 +43,13 @@ To make these notes actually useful, I turned them into a website: the full coll
   <p><sub>▲ one-click English UI</sub></p>
   <br/>
   <img src="docs/img/detail.png" alt="Vulnerability detail page" width="100%" />
-  <P><sub>▲ Left: note detail page 1 (code highlight / TOC / progress)</sub></P>
+  <P><sub>▲ note detail page 1 (code highlight / TOC / progress)</sub></P>
   <br/>
   <img src="docs/img/detail2.png" alt="Vulnerability detail page" width="100%" />
-  <P><sub>▲ Left: note detail page 2 (code highlight / TOC / progress)</sub></P>
+  <P><sub>▲ note detail page 2 (code highlight / TOC / progress)</sub></P>
   <br/>
   <img src="docs/img/detail3.png" alt="Vulnerability detail page" width="100%" />
-  <P><sub>▲ Left: note detail page 3 (code highlight / TOC / progress)</sub></P>
+  <P><sub>▲ note detail page 3 (code highlight / TOC / progress)</sub></P>
   <br/>
 </div>
 
@@ -111,6 +111,6 @@ Notes and site data are **decoupled** — day-to-day updates require no front-en
 
 **© 2024-present hacker369** ｜ Learning notes, feel free to share with attribution
 
-[⬆ Back to top](#-vulhubtutorialnotes)
+[⬆ Back to top](#_-vulhubtutorialnotes)
 
 </div>
