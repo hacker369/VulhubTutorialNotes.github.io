@@ -43,7 +43,7 @@
   <p><sub>▲ 一键切换英文界面</sub></p>
   <br/>
   <img src="docs/img/detail.png" alt="漏洞详情页" width="100%" />
-  <p><sub>▲ 漏洞详情页（代码高亮 / 目录锚点 / 阅读进度）</sub></p>
+  <p><sub>▲ 漏洞详情页1（代码高亮 / 目录锚点 / 阅读进度）</sub></p>
   <br/>
   <img src="docs/img/detail2.png" alt="漏洞详情页" width="100%" />
   <p><sub>▲ 漏洞详情页2（代码高亮 / 目录锚点 / 阅读进度）</sub></p>
