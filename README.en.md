@@ -36,12 +36,21 @@ To make these notes actually useful, I turned them into a website: the full coll
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="docs/img/home.png" alt="Home dashboard in dark terminal style" width="100%" />
+  <img src="docs/img/home1.png" alt="Home dashboard in dark terminal style" width="100%" />
   <p><sub>▲ Dark terminal home: stats dashboard / vulnerability type distribution / year histogram</sub></p>
   <br/>
-  <img src="docs/img/detail.png" alt="Vulnerability detail page" width="49.5%" />
-  <img src="docs/img/english.png" alt="English UI" width="49.5%" />
-  <p><sub>▲ Left: note detail page (code highlight / TOC / progress) ｜ Right: one-click English UI</sub></p>
+  <img src="docs/img/home_english1.png" alt="English UI" width="100%" />
+  <p><sub>▲ one-click English UI</sub></p>
+  <br/>
+  <img src="docs/img/detail.png" alt="Vulnerability detail page" width="100%" />
+  <P><sub>▲ Left: note detail page 1 (code highlight / TOC / progress)</sub></P>
+  <br/>
+  <img src="docs/img/detail2.png" alt="Vulnerability detail page" width="100%" />
+  <P><sub>▲ Left: note detail page 2 (code highlight / TOC / progress)</sub></P>
+  <br/>
+  <img src="docs/img/detail3.png" alt="Vulnerability detail page" width="100%" />
+  <P><sub>▲ Left: note detail page 3 (code highlight / TOC / progress)</sub></P>
+  <br/>
 </div>
 
 ## 🧭 Quick Start
