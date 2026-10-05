@@ -36,10 +36,10 @@
 ## 📸 站点预览
 
 <div align="center">
-  <img src="docs/img/home.png" alt="站点首页：暗黑终端风统计看板" width="100%" />
+  <img src="docs/img/home1.png" alt="站点首页：暗黑终端风统计看板" width="100%" />
   <p><sub>▲ 暗黑终端风首页：统计看板 / 漏洞类型分布 / 收录年份直方图</sub></p>
   <br/>
-  <img src="docs/img/english.png" alt="英文界面" width="100%" />
+  <img src="docs/img/home_english1.png" alt="英文界面" width="100%" />
   <p><sub>▲ 一键切换英文界面</sub></p>
   <br/>
   <img src="docs/img/detail.png" alt="漏洞详情页" width="100%" />
